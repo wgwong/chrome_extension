@@ -7,40 +7,31 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 800px;
-      }
-    </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
+    <link rel="stylesheet" type="text/css" href="popup.css">
+    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  
     <script src="jquery-2.1.3.min.js"></script>
     <script src="popup.js"></script>
 
   </head>
   <body>
+
+    <center>
   <form>
-    Front of Flash Card: <input type="text" id="fronttext"><br>
-    Back of Flash Card: <input type="text" id="backtext"><br>
-  <input id="createfc_button" type="Submit" value="Submit">
-  <input id="studyMode_button" type="Submit" value="Study!">
+    <font size="4">
+      <h1> Study Cards </h1>
+ <!--    Front of Flash Card: --> <br> <input type="text" id="fronttext" class="text" placeholder="Front:" ><p> 
+    <!-- Back of Flash Card: --> <br><input type="text" id="backtext" class="text" placeholder="Back: "><br>
+    <p>
+      
+  <input id="createfc_button" type="Submit" value="Submit" class="submit" a href="#">
+  <input id="studyMode_button" type="Submit" value="Study!" class="study" a href="#">
+
   </form>
   <p id="f"></p>
   <br>
   <p id="b"></p>
   </body>
 </html>
+
 

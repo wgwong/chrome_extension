@@ -1,0 +1,356 @@
+
+
+
+
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+   background-image: url("p1.jpg");
+    background-position: center center;
+  font-family: 'Slabo 27px', serif;
+  background-repeat: no-repeat;
+  
+  /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+  
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color:#464646;
+  
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+}
+
+.h1 {
+  color: white;
+  font-size: 50px;
+
+}
+
+.css-shapes-preview{ 
+    position: relative; 
+    height: 300px; 
+    width: 600px; 
+    background-color: white; 
+    opacity: 0.3;
+  position:absolute;
+  top:40%;
+  left:30%;
+  -webkit-border-radius: 60px;
+-moz-border-radius: 60px;
+border-radius: 60px;
+ 
+
+}
+
+/* creating flip */
+.flip-card {
+  height: 300px;
+  width: 600px;
+  transform: perspective(400px) rotateY(0deg);
+  -moz-transform: perspective(400px) rotateY(0deg);
+  -webkit-transform: perspective(400px) rotateY(0deg);
+  -o-transform: perspective(400px) rotateY(0deg);
+  -ms-transform: perspective(400px) rotateY(0deg);
+  transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+   background-color: white; 
+    opacity: 0.3;
+  position:absolute;
+  top:40%;
+  left:30%;
+  -webkit-border-radius: 60px;
+-moz-border-radius: 60px;
+border-radius: 60px;
+}
+
+
+.flip-card .flip-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.flip-card .flip-back {
+  height: 100%;
+  width: 100%;
+}
+.flip-card:hover {
+  transform: perspective(400px) rotateY(180deg);
+  -moz-transform: perspective(400px) rotateY(180deg);
+  -webkit-transform: perspective(400px) rotateY(180deg);
+  -o-transform: perspective(400px) rotateY(180deg);
+  -ms-transform: perspective(400px) rotateY(180deg);
+}
+.flip-card:hover .flip-back {
+  transform: perspective(400px) rotateY(-180deg);
+  -moz-transform: perspective(400px) rotateY(-180deg);
+  -webkit-transform: perspective(400px) rotateY(-180deg);
+  -o-transform: perspective(400px) rotateY(-180deg);
+  -ms-transform: perspective(400px) rotateY(-180deg);
+}
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+h1 {
+  font-size: 75px;
+  color: white; 
+
+}
+
+h2 {
+  font-size: 30px;
+  color: white; 
+
+}
+
+
+/**************************
+  DEFAULT BOOTSTRAP STYLES
+**************************/
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+  
+.btn-lg {
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: white;
+  border-color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: white;
+  background-color: white;
+  border-color: white;
+}
+
+/***********************
+  OUTLINE BUTTONS
+************************/
+
+.btn.outline {
+  background: none;
+  padding: 12px 22px;
+}
+.btn-primary.outline {
+  border: 2px solid white;
+  color: white;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+  color: white;
+  border-color: white;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+  border-color: white;
+  color: white;
+  box-shadow: none;
+}
+
+/***********************
+  CUSTON BTN VALUES
+************************/
+
+.btn {
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
