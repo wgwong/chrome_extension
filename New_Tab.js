@@ -19,9 +19,6 @@ $(document).ready(function() {
     $("#b2").text("");
     currentIsFront = true;
 
-    jQuery("#f2").fitText(1);
-    jQuery("#b2").fitText(1);
-
 window.onkeydown = function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
