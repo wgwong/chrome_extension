@@ -84,24 +84,29 @@ border-radius: 60px;
 #f2 {
   color: black;
   font-size: 90px;
-  position:fixed;
-  top: 50%;
-  left: 40%;
-
+  position: absolute;
 }
 
 #b2 {
   color: black;
   font-size: 90px;
-  position:fixed;
-  top: 50%;
-  left: 40%;
+  position: absolute;
 }
 /* creating flip */
 
-#flip-card {
+#fc-wrapper {
   height: 300px;
   width: 600px;
+  
+
+  white-space: pre-wrap; /* css-3 */    
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */    
+  white-space: -o-pre-wrap; /* Opera 7 */    
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+#flip-card {
   transform: perspective(400px) rotateY(0deg);
   -moz-transform: perspective(400px) rotateY(0deg);
   -webkit-transform: perspective(400px) rotateY(0deg);
@@ -112,14 +117,28 @@ border-radius: 60px;
   -webkit-transition: all ease 0.2s;
   -o-transition: all ease 0.2s;
   -ms-transition: all ease 0.2s;
-   background-color: white !important; 
+   background-color: rgba(255,255,255,.3) !important; 
+   /*
     opacity: 0.3;
-  position:absolute;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  */
+
+  white-space: pre-wrap; /* css-3 */    
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */    
+  white-space: -o-pre-wrap; /* Opera 7 */    
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+
+  height: 300px;
+  width: 600px;
+  position: absolute;
   top:40%;
   left:30%;
-  -webkit-border-radius: 60px;
--moz-border-radius: 60px;
-border-radius: 60px;
+
+  overflow-y:scroll;
+
 }  
 
 /*
