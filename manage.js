@@ -12,11 +12,9 @@ $(document).ready(function() {
                 .append($('<td width="300" id=back_' + count + '>')
                     .text(temp3[count].back))
                 .append($('<td>')
-                    .append($('<button id = "edit_'+count+'">')
-                        .text("Edit")))
+                    .append($('<a id = "edit_'+count+'"><i class="fa fa-2x fa-pencil"></i>')))
                 .append($('<td>')
-                    .append($('<button id = "delete_'+count+'">')
-                        .text("Delete")))
+                    .append($('<a id = "delete_'+count+'"><i class="fa fa-2x fa-trash-o"></i></a>')))
                 );
             $("#delete_"+count).click( function() {
                 var str = this.id;
@@ -28,20 +26,20 @@ $(document).ready(function() {
             });
             $("#edit_"+count).click( function() {
 
-                var buttontext = ($(this).html());
+                var buttontext = String($(this).html());
 
-                if (buttontext === "Edit") {
+                if (buttontext == '<i class="fa fa-2x fa-pencil"></i>') {
                     var str3 = this.id;
                     var str4 = str3.replace ( /[^\d.]/g, '' );
                     var value = parseInt(str4, 10);
 
-                    $("#front_" + value).replaceWith("<textarea rows='8' col='50' maxlength='500' id='newfront_" + value + "'>" + temp3[value].front + "</textarea>");
-                    $("#back_" + value).replaceWith("<td><textarea rows='8' col='50' maxlength='500' id='newback_" + value + "'>" + temp3[value].back + "</textarea></td>");
-                    $("#edit_" + value).html('Save');
+                    $("#front_" + value).replaceWith("<textarea rows='8' col='50' maxlength='500' id='newfront_" + value + "' style='background-color: rgba(255,255,255,.05); color: white'>" + temp3[value].front + "</textarea>");
+                    $("#back_" + value).replaceWith("<td><textarea rows='8' col='50' maxlength='500' id='newback_" + value + "' style='background-color: rgba(255,255,255,.05); color: white'>" + temp3[value].back + "</textarea></td>");
+                    $("#edit_" + value).html('<i class="fa fa-2x fa-pencil-square-o"></i>');
 
                     localStorage.setItem("flashcards", JSON.stringify(temp3));
                 }
-                else if (buttontext === "Save") {
+                else if (buttontext == '<i class="fa fa-2x fa-pencil-square-o"></i>') {
                     var str3 = this.id;
                     var str4 = str3.replace ( /[^\d.]/g, '' );
                     var value = parseInt(str4, 10);
@@ -53,7 +51,7 @@ $(document).ready(function() {
 
                     localStorage.setItem("flashcards", JSON.stringify(temp3));
 
-                    $("#edit_" + value).html('Edit');
+                    $("#edit_" + value).html('<i class="fa fa-2x fa-pencil"></i>');
                     location.reload();
                 }
             });
