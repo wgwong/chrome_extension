@@ -21,7 +21,7 @@ function expandFullScreen() {
 }
 
 $(document).ready(function() {
-  var fclist_json = [];
+    var fclist_json = [];
 
   var fclist_str = localStorage.getItem("flashcards");
   var temp = JSON.parse(fclist_str);
@@ -31,11 +31,15 @@ $(document).ready(function() {
     $("#b").replaceWith(fclist_json[fclist_json.length-1].back);
   }
   else {
-    console.log("nothing found in localstorage!"); //debug
+    console.log("Error: Nothing found in localstorage!"); //debug
   }
 
   $("#studyMode_button").click( function() {
     expandFullScreen();
+  });
+
+  $("#manage_button").click( function() {
+    chrome.tabs.create({url: "Manage_Flash_Cards.html"});
   });
 
   $("#createfc_button").click( function() {
