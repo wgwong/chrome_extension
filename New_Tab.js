@@ -14,9 +14,9 @@ $(document).ready(function() {
     currentNoteCard = 0;
     lengthFlashCardList = fclist_json.length;
 
-    $("#f2").replaceWith(fclist_json[currentNoteCard].front);
+    $("#f2").text(fclist_json[currentNoteCard].front); //Alabama
+    $("#b2").text("");
 
-    $("#b2").replaceWith(fclist_json[currentNoteCard].back);
 
 window.onkeydown = function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
@@ -40,12 +40,9 @@ window.onkeydown = function (e) {
     	{
     		currentNoteCard = currentNoteCard + lengthFlashCardList;
     	}
-    	console.log(currentNoteCard);
-    	console.log(fclist_json[currentNoteCard].front);
-    	console.log(fclist_json[currentNoteCard].back);
-    	//$("#f2").replaceWith(fclist_json[currentNoteCard].front);
-    	$("#f2").replaceWith("fghfghfghf");
-    	//$("#b2").replaceWith(fclist_json[(currentNoteCard-1)%lengthFlashCardList].back);
+    	
+    	$("#f2").text(fclist_json[currentNoteCard].front);
+    	$("#b2").text("");
     }
 
     if (code == 39) //right arrow
@@ -59,25 +56,25 @@ window.onkeydown = function (e) {
     		currentNoteCard = currentNoteCard % lengthFlashCardList;
     	}
     	
-    	console.log(currentNoteCard);
-    	console.log(fclist_json[currentNoteCard].front);
-    	console.log(fclist_json[currentNoteCard].back);
-		//$("#f2").replaceWith(fclist_json[currentNoteCard].front);
-		$("#f2").replaceWith("fghfghfghf");
-    	//$("#b2").replaceWith(fclist_json[(currentNoteCard+1)%lengthFlashCardList].back);
+    	
+		$("#f2").text(fclist_json[currentNoteCard].front);
+    	$("#b2").text("");
     }
 
-    if (code == 38 || code == 40) //up arrow and down arrow respectively
+    if (code == 40) //down arrow
     {
-    	console.log("Up or down Arrow");
-    	console.log(currentNoteCard);
-    	console.log(fclist_json[currentNoteCard].front);
-    	console.log(fclist_json[currentNoteCard].back);
-    	//$("#b2").replaceWith(fclist_json[currentNoteCard].back);
-    	$("#b2").replaceWith("fghfghfghf");
+    	console.log("Down Arrow");
+        $("#f2").text("");
+    	$("#b2").text(fclist_json[currentNoteCard].back);
+    }
+
+    if (code == 38) //up arrow
+    {
+        console.log("Up Arrow");
+        $("#f2").text(fclist_json[currentNoteCard].front);
+        $("#b2").text("");
     }
     };
-
   }
   else {
     console.log("nothing found in localstorage!");

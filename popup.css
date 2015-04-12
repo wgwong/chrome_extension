@@ -46,7 +46,7 @@ h1{
 }
 
 
-.submit {
+.submit, .study, .manage {
   background-color:transparent;
   -moz-border-radius:29px;
   -webkit-border-radius:29px;
@@ -60,43 +60,11 @@ h1{
   padding:7px 15px;
   text-decoration:none;
 }
-.submit:hover {
+.submit, .study, .manage:hover {
   background-color:transparent;
 }
-.submit:active {
+.submit, .study, .manage:active {
   position:relative;
   top:1px;
 }
-
-.study {
-
-  background-color:transparent;
-  -moz-border-radius:29px;
-  -webkit-border-radius:29px;
-  border-radius:29px;
-  border:1px solid #ffffff;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:arial;
-  font-size:15px;
-  padding:7px 15px;
-  text-decoration:none;
-}
-.study:hover {
-  background-color:transparent;
-}
-.study:active {
-  position:relative;
-  top:1px;
-}
-
-
-/*.text {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(255, 255, 255, 0.15);
-    outline: none;
-    background: white;
-    background: rgba(255, 255, 255, 0.4);
-    outline: solid 1px white;
-}*/
 

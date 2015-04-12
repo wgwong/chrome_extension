@@ -32,7 +32,7 @@ a:hover {
 
 html,
 body {
-  height: 100%;
+  height: 90%;
   background-color: #333;
    background-image: url("p1.jpg");
     background-position: center center;
@@ -60,6 +60,8 @@ body {
 .h1 {
   color: white;
   font-size: 50px;
+  position: absolute;
+  top: 30%;
 
 }
 
@@ -79,8 +81,25 @@ border-radius: 60px;
 
 }
 
+#f2 {
+  color: black;
+  font-size: 90px;
+  position:fixed;
+  top: 50%;
+  left: 40%;
+
+}
+
+#b2 {
+  color: black;
+  font-size: 90px;
+  position:fixed;
+  top: 50%;
+  left: 40%;
+}
 /* creating flip */
-.flip-card {
+
+#flip-card {
   height: 300px;
   width: 600px;
   transform: perspective(400px) rotateY(0deg);
@@ -93,7 +112,7 @@ border-radius: 60px;
   -webkit-transition: all ease 0.2s;
   -o-transition: all ease 0.2s;
   -ms-transition: all ease 0.2s;
-   background-color: white; 
+   background-color: white !important; 
     opacity: 0.3;
   position:absolute;
   top:40%;
@@ -101,9 +120,9 @@ border-radius: 60px;
   -webkit-border-radius: 60px;
 -moz-border-radius: 60px;
 border-radius: 60px;
-}
+}  
 
-
+/*
 .flip-card .flip-front {
   position: absolute;
   top: 0;
@@ -128,8 +147,45 @@ border-radius: 60px;
   -webkit-transform: perspective(400px) rotateY(-180deg);
   -o-transform: perspective(400px) rotateY(-180deg);
   -ms-transform: perspective(400px) rotateY(-180deg);
+}*/
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  
+  border-bottom: 10px solid white;
+   opacity: 0.3;
 }
 
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+   opacity: 0.3;
+}
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  
+  border-left: 10px solid white;
+   opacity: 0.3;
+}
+
+.arrow-left {
+  width: 5; 
+  height: 5; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid white; 
+   opacity: 0.3;
+
+}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
