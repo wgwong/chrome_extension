@@ -10,7 +10,6 @@ $(document).ready(function() {
   var temp = JSON.parse(flashcardsList);
   if (temp !== null) {
     fclist_json = temp;
-    console.log(fclist_json);
 
     currentNoteCard = 0;
     lengthFlashCardList = fclist_json.length;
