@@ -31,7 +31,7 @@ $(document).ready(function() {
     $("#b").replaceWith(fclist_json[fclist_json.length-1].back);
   }
   else {
-    console.log("nothing found in localstorage!"); //debug
+    console.log("Error: Nothing found in localstorage!"); //debug
   }
 
   $("#studyMode_button").click( function() {
