@@ -20,25 +20,41 @@ function expandFullScreen()
 }
 
 $(document).ready(function() {
-  $("#button1").click( function() {
-    var frontside = $("#front").val();
-    var backside = $("#back").val();
-    var temp = {"front": frontside, "back": backside};
-    var temp_str = JSON.stringify(temp);
-    localStorage.setItem("result", temp_str);
-    var temp2 = localStorage.getItem("result");
+  var fclist_json = [];
+
+  var fclist_str = localStorage.getItem("flashcards");
+  var temp = JSON.parse(fclist_str);
+  if (temp !== null) {
+    fclist_json = temp;
+    $("#f").replaceWith(fclist_json[fclist_json.length-1].front);
+    $("#b").replaceWith(fclist_json[fclist_json.length-1].back);
+  }
+  else {
+    console.log("nothing found in localstorage!"); //debug
+  }
+
+  $("#createfc_button").click( function() {
+    var front_text = $("#fronttext").val();
+    var back_text = $("#backtext").val();
+    fclist_json.push({"front": front_text, "back": back_text});
+    fclist_str = JSON.stringify(fclist_json);
+    localStorage.setItem("flashcards", fclist_str);
+
+    /*var temp2 = localStorage.getItem("result");
     var temp3 = JSON.parse(temp2);
     $("#f").replaceWith(temp3.front);
-    $("#b").replaceWith(temp3.back);
-    console.log(temp2);
-    console.log(temp3);
-    alert(temp2); //debug
-    alert(temp3); //debug
+    $("#b").replaceWith(temp3.back);*/
+
+    console.log(fclist_json); //debug
+    console.log(fclist_str); //debug
+    alert(fclist_json); //debug
+    alert(fclist_str); //debug
+
+    //console.log(temp2); //debug
+    //console.log(temp3); //debug
+    //alert(temp2); //debug
+    //alert(temp3); //debug
   });
-  var temp2 = localStorage.getItem("result");
-  var temp3 = JSON.parse(temp2);
-  $("#f").replaceWith(temp3.front);
-  $("#b").replaceWith(temp3.back);
 });
 
 /*

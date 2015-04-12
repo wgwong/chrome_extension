@@ -7,4 +7,4 @@ function expandFullScreen()
     });
 }
 
-setInterval(function() { expandFullScreen(); }, 120000);
+//setInterval(function() { expandFullScreen(); }, 1200000);
