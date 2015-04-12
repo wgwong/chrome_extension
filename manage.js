@@ -34,4 +34,10 @@ $(document).ready(function() {
 
     	count = count + 1;
   	}
+
+  	$("#clear_button").click( function() {
+	localStorage.clear();
+	});
  });
+
+
