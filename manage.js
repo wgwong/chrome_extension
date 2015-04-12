@@ -36,7 +36,7 @@ $(document).ready(function() {
                     var value = parseInt(str4, 10);
 
                     $("#front_" + value).replaceWith("<input type='text' id='newfront_" + value + "' value='" + temp3[value].front + "'>");
-                    $("#back_" + value).replaceWith("<input type='text' id='newback_" + value + "' value='" + temp3[value].back + "'>");
+                    $("#back_" + value).replaceWith("<td><input type='text' id='newback_" + value + "' value='" + temp3[value].back + "'></td>");
                     $("#edit_" + value).html('Save');
 
                     localStorage.setItem("flashcards", JSON.stringify(temp3));
