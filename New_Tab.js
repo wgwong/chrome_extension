@@ -31,6 +31,7 @@ window.onkeydown = function (e) {
 
     if (code == 37) //left arrow
     {
+        console.log("Left Arrow");
     	currentNoteCard = currentNoteCard-1;
 
     	if(currentNoteCard < 0)
@@ -44,6 +45,7 @@ window.onkeydown = function (e) {
 
     if (code == 39) //right arrow
     {	
+        console.log("Right Arrow");
     	currentNoteCard = currentNoteCard + 1
     	
     	if(currentNoteCard > lengthFlashCardList - 1)
