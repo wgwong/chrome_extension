@@ -8,14 +8,15 @@
  * @param {function(string)} callback - called when the URL of the current tab
  *   is found.
  **/
-var counter = 0
 
-function expandFullScreen()
-{
+function expandFullScreen() {
       chrome.windows.getCurrent(function (window) {
       //console.log(window.id);
-      chrome.tabs.create({url: "New_Tab.html" }); 
-      chrome.windows.update(window.id, {state:"fullscreen"}, function () {}); 
+        chrome.tabs.create({url: "New_Tab.html"}); 
+
+        //chrome.windows.create({url: "New_Tab.html", type: "popup"});
+
+        chrome.windows.update(window.id, {state:"fullscreen"}, function () {}); 
     });
 }
 
@@ -32,6 +33,10 @@ $(document).ready(function() {
   else {
     console.log("nothing found in localstorage!"); //debug
   }
+
+  $("#studyMode_button").click( function() {
+    expandFullScreen();
+  });
 
   $("#createfc_button").click( function() {
     var front_text = $("#fronttext").val();
@@ -56,7 +61,10 @@ $(document).ready(function() {
     //alert(temp3); //debug
   });
 });
+//removes a tab
+//chrome.tabs.remove({tabIds: 0});
 
+ 
 /*
 document.getElementById('button1').addEventListener('click', function(){
   var frontside = document.getElementById('front').value;
