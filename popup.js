@@ -11,12 +11,8 @@
 
 function expandFullScreen() {
       chrome.windows.getCurrent(function (window) {
-      //console.log(window.id);
-        chrome.tabs.create({url: "New_Tab.html"}); 
-
-        //chrome.windows.create({url: "New_Tab.html", type: "popup"});
-
-        chrome.windows.update(window.id, {state:"fullscreen"}, function () {}); 
+      chrome.tabs.create({url: "New_Tab.html"}); 
+      chrome.windows.update(window.id, {state:"maximized"}, function () {}); 
     });
 }
 
@@ -27,8 +23,6 @@ $(document).ready(function() {
   var temp = JSON.parse(fclist_str);
   if (temp !== null) {
     fclist_json = temp;
-    $("#f").replaceWith(fclist_json[fclist_json.length-1].front);
-    $("#b").replaceWith(fclist_json[fclist_json.length-1].back);
   }
   else {
     console.log("Error: Nothing found in localstorage!"); //debug
@@ -50,18 +44,3 @@ $(document).ready(function() {
     localStorage.setItem("flashcards", fclist_str);
   });
 });
- 
-/*
-document.getElementById('button1').addEventListener('click', function(){
-  var frontside = document.getElementById('front').value;
-  var backside = document.getElementById('back').value;
-  var temp = {front: frontside, back: backside};
-  localStorage.setItem("result", temp);
-  var temp2 = localStorage.getItem("result");
-  document.getElementById('f').innerHTML = "arbitrarystring"; //debug
-  //document.getElementById('f').innerHTML = temp2.back;
-});
-
-  function partb() {
-
-  }*/

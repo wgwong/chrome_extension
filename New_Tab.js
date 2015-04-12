@@ -1,6 +1,7 @@
 var currentNoteCard = 0;
 var lengthFlashCardList = [];
 var fclist_json = [];
+var currentIsFront = true;
 
 $(document).ready(function() {
   var fclist_json = [];
@@ -14,8 +15,9 @@ $(document).ready(function() {
     currentNoteCard = 0;
     lengthFlashCardList = fclist_json.length;
 
-    $("#f2").text(fclist_json[currentNoteCard].front); //Alabama
+    $("#f2").text(fclist_json[currentNoteCard].front);
     $("#b2").text("");
+    currentIsFront = true;
 
 
 window.onkeydown = function (e) {
@@ -26,14 +28,11 @@ window.onkeydown = function (e) {
         chrome.windows.getCurrent(function (window) {
       	chrome.windows.update(window.id, {state:"maximized"}, function () {}); 
       	chrome.tabs.getSelected(null, function(tab) {chrome.tabs.remove(tab.id, function(){});});
-      	
     	});
     }
 
     if (code == 37) //left arrow
     {
-    	console.log("Left Arrow");
-    	
     	currentNoteCard = currentNoteCard-1;
 
     	if(currentNoteCard < 0)
@@ -46,9 +45,7 @@ window.onkeydown = function (e) {
     }
 
     if (code == 39) //right arrow
-    {
-    	console.log("Right Arrow");
-    	
+    {	
     	currentNoteCard = currentNoteCard + 1
     	
     	if(currentNoteCard > lengthFlashCardList - 1)
@@ -61,18 +58,23 @@ window.onkeydown = function (e) {
     	$("#b2").text("");
     }
 
-    if (code == 40) //down arrow
+    if (code == 38 || code == 40) //up or down arrow respectively
     {
-    	console.log("Down Arrow");
-        $("#f2").text("");
-    	$("#b2").text(fclist_json[currentNoteCard].back);
-    }
-
-    if (code == 38) //up arrow
-    {
-        console.log("Up Arrow");
-        $("#f2").text(fclist_json[currentNoteCard].front);
-        $("#b2").text("");
+        if (currentIsFront)
+        {
+            currentIsFront = false
+            //not the front, so we display the back
+            $("#f2").text("");
+            $("#b2").text(fclist_json[currentNoteCard].back);
+        }
+        else
+        {
+            currentIsFront = true   
+            //is the front, so we don't display the back
+            $("#f2").text(fclist_json[currentNoteCard].front);
+            $("#b2").text("");
+        }
+        
     }
     };
   }

@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "hackdartmouth_chrome_extension",
-    "description": "This extension will lock your screen.",
+    "description": "This extension will allow you to practice your flash cards!",
     "version": "0.0.1",
     
 	"background": {
