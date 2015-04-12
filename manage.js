@@ -7,9 +7,9 @@ $(document).ready(function() {
         while (count < size) {
             var countstring = count.toString();
             $("#myTable").find('tbody').append($('<tr>')
-                .append($('<td id=front_' + count + '>')
+                .append($('<td width="300" id=front_' + count + '>')
                     .text(temp3[count].front))
-                .append($('<td id=back_' + count + '>')
+                .append($('<td width="300" id=back_' + count + '>')
                     .text(temp3[count].back))
                 .append($('<td>')
                     .append($('<button id = "edit_'+count+'">')
@@ -35,8 +35,8 @@ $(document).ready(function() {
                     var str4 = str3.replace ( /[^\d.]/g, '' );
                     var value = parseInt(str4, 10);
 
-                    $("#front_" + value).replaceWith("<input type='text' id='newfront_" + value + "' value='" + temp3[value].front + "'>");
-                    $("#back_" + value).replaceWith("<td><input type='text' id='newback_" + value + "' value='" + temp3[value].back + "'></td>");
+                    $("#front_" + value).replaceWith("<textarea rows='8' col='50' maxlength='500' id='newfront_" + value + "'>" + temp3[value].front + "</textarea>");
+                    $("#back_" + value).replaceWith("<td><textarea rows='8' col='50' maxlength='500' id='newback_" + value + "'>" + temp3[value].back + "</textarea></td>");
                     $("#edit_" + value).html('Save');
 
                     localStorage.setItem("flashcards", JSON.stringify(temp3));
@@ -65,7 +65,8 @@ $(document).ready(function() {
     load_fcdata();
 
   	$("#clear_button").click( function() {
-	localStorage.clear();
+    	localStorage.clear();
+        location.reload();
 	});
  });
 
