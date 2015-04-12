@@ -48,26 +48,8 @@ $(document).ready(function() {
     fclist_json.push({"front": front_text, "back": back_text});
     fclist_str = JSON.stringify(fclist_json);
     localStorage.setItem("flashcards", fclist_str);
-
-    /*var temp2 = localStorage.getItem("result");
-    var temp3 = JSON.parse(temp2);
-    $("#f").replaceWith(temp3.front);
-    $("#b").replaceWith(temp3.back);*/
-
-    console.log(fclist_json); //debug
-    console.log(fclist_str); //debug
-    alert(fclist_json); //debug
-    alert(fclist_str); //debug
-
-    //console.log(temp2); //debug
-    //console.log(temp3); //debug
-    //alert(temp2); //debug
-    //alert(temp3); //debug
   });
 });
-//removes a tab
-//chrome.tabs.remove({tabIds: 0});
-
  
 /*
 document.getElementById('button1').addEventListener('click', function(){
